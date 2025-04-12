@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AutomationMVP</string>
+    <string name="Prompt">Ask a question to MyAI!</string>
+    <string name="PromptButton">Start Listening</string>
+    <string name="DeployButton">Deploy</string>
+    <string name="ClearButton">Clear</string>
+    <string name="ResultWait">Listening For Input.....</string>
+</resources>

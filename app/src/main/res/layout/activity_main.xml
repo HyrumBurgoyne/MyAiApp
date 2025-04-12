@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/Prompt"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_marginTop="100dp"/>
+
+        <Button
+            android:id="@+id/voiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/PromptButton"
+            android:layout_marginTop="100dp"/>
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="#a9a9a9"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:text="@string/ResultWait"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <!-- Horizontal LinearLayout for the bottom buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/DeployButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/DeployButton"
+                android:background="@drawable/deploy_animation"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/ClearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ClearButton"
+                android:background="@drawable/clear_animation"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
