@@ -28,7 +28,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MainActivity extends ComponentActivity {
-    private static final long MAX_LISTEN_MS = 15_0000;
+    private static final long MAX_LISTEN_MS = 150000;
 
     private Button btnRecord;
     private TextView tvResult;
@@ -151,6 +151,7 @@ public class MainActivity extends ComponentActivity {
                 Toast.makeText(MainActivity.this, "Automation Completed", Toast.LENGTH_LONG).show();
                 tvResult.setText("");
                 deployButton.setEnabled(true);
+                tvResult.setText(R.string.ResultWait);
                 Log.d("WebSocket", "Completed received");
             }
 
@@ -159,6 +160,8 @@ public class MainActivity extends ComponentActivity {
                 Toast.makeText(MainActivity.this, "Error With Deployment", Toast.LENGTH_LONG).show();
                 tvResult.setText("");
                 Log.e("WebSocket", "Error: " + error);
+                deployButton.setEnabled(true);
+                tvResult.setText(R.string.ResultWait);
             }
         });
 
@@ -175,12 +178,13 @@ public class MainActivity extends ComponentActivity {
             if (isListening){
                 Toast.makeText(MainActivity.this, "Please wait until model is done listening", Toast.LENGTH_SHORT).show();
             }
-            if (currentResult.isEmpty()) {
-                currentResult = tvResult.getText().toString(); // this could be bad in future idk
+            if (tvResult.getText().toString().equals("Thinking...") || tvResult.getText().toString().equals("Listening For Input.....")) {
+                Toast.makeText(MainActivity.this, "Please wait until model is done thinking", Toast.LENGTH_SHORT).show();
+                return;
             }
             deployButton.setEnabled(false);
             webSocketManager.connect("ws://192.168.4.44:8765");
-            webSocketManager.sendMessage(currentResult);
+            webSocketManager.sendMessage(tvResult.getText().toString());
             tvResult.setText("Thinking...");
         });
 
@@ -188,7 +192,6 @@ public class MainActivity extends ComponentActivity {
             tvResult.setText(R.string.ResultWait);
         });
     }
-
 
 
 
