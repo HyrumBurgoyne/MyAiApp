@@ -128,4 +128,4 @@ This document explains how to set up and run the automation code controlling the
 
 ---
 
-By following these instructions, you should be able to successfully set up and operate the automation app on your tablet. If further issues arise, refer to the documentation for Android Studio, Appium, or consult technical support.
+By following these instructions, you should be able to successfully set up and operate the automation app on your tablet. If further issues arise, refer to the documentation for Android Studio, Appium, or text me.
