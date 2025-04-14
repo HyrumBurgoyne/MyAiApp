@@ -11,10 +11,12 @@ This document explains how to set up and run the automation code controlling the
 
 - **Required Logins & App State:**  
   - **Instacart:**  
-    - The tablet must be opened and Instacart must be logged in.
+    - The tablet must be opened and Instacart must be logged in, and the app is closed.
     - Ensure that the carts are all clear.
   - **Airbnb:**  
-    - Make sure Airbnb is logged in.
+    - Make sure Airbnb is logged in, and the app is closed.
+  - **UnitedAirlines**
+     - Make sure the app is just closed
 
 - **Software Requirements:**  
   - **Android Studio:**  
